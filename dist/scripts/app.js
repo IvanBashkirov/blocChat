@@ -9,7 +9,7 @@
       .state('landing', {
         url: '/',
         controller: 'LandingCtrl as landing',
-        templateUrl: '/templates/landing.html'
+        templateUrl: '/templates/home.html'
     });
   }
   angular
