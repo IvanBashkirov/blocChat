@@ -1,12 +1,10 @@
 (function() {
   function Room($firebaseArray) {
-    var ref = firebase.database().ref().child('rooms');
-    var rooms = $firebaseArray(ref);
+    var ref = firebase.database().ref();
+    var rooms = $firebaseArray(ref.child('rooms'));
 
     var addRoom = function(){
-      console.log(rooms);
-      rooms.$loaded().then(()=>console.log(rooms.length));
-      room: 'room';
+      rooms.$loaded().then(()=>rooms.$add('room' + (rooms.length + 1)));
     };
     return {
       all: rooms,

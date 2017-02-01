@@ -4,10 +4,11 @@
      this.rooms = Room.all;
      this.processAddRoomRequest = function() {
        $uibModal.open({
-         templateUrl: '/templates/modal.html'
+         templateUrl: '/templates/modal.html',
+         controller: 'ModalCtrl',
+         controllerAs: 'modal'
        });
-     console.log('hi');
-    }
+     }
   }
   
   angular
