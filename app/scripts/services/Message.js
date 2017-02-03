@@ -6,6 +6,16 @@
     return {
       getByRoomId: function(roomUID) {
         return $firebaseArray(ref.orderByChild('roomUID').equalTo(roomUID));
+      },
+      submitMessage: function(text, roomUID) {
+        if (text && roomUID) {
+          messages.$loaded().then(()=>messages.$add({
+            content: text,
+            roomUID,
+            sentAt: new Date().toLocaleTimeString(),
+            userName: "Anonymous"
+          }));
+        }
       }
     }
   }
