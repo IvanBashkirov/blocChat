@@ -1,3 +1,14 @@
-.message {
+.room {
   background-color: cadetblue;
+  position: absolute;
+  left: 100px;
+  top: 20px;
+  height: 250px;
+  overflow: scroll;
+  
 }
+
+.roomBut {
+  
+}
+

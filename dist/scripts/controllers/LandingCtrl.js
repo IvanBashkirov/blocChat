@@ -1,26 +1,54 @@
-(function() {
-  
-  function LandingCtrl(Message, Room, $uibModal, $scope) {
-     this.rooms = Room.all;
-     this.messages = null;
-     this.processAddRoomRequest = function() {
-       $uibModal.open({
-         templateUrl: '/templates/modal.html',
-         controller: 'ModalCtrl',
-         controllerAs: 'modal'
-       });
-     }
-     this.currentRoomID = null;
-     this.pickARoom = ((room) => {
-       this.currentRoomID = room.$id; 
-       this.messages = Message.getByRoomId(room.$id);
-     });
-     this.submit=(() => {
-       Message.submitMessage($scope.text, this.currentRoomID);
-     })
+(function () {
+
+  function LandingCtrl(Message, Room, $firebaseAuth, $uibModal, $scope) {
+    this.messages = null;
+    this.userName = null;
+    this.currentRoomID = null;
+    this.rooms = Room.all;
+    const auth = $firebaseAuth();
+    
+    this.processAddRoomRequest = function () {
+      $uibModal.open({
+        templateUrl: '/templates/modal.html',
+        controller: 'ModalCtrl',
+        controllerAs: 'modal'
+      });
+    }
+    
+    this.pickARoom = ((room) => {
+      this.currentRoomID = room.$id;
+      this.messages = Message.getByRoomId(room.$id);
+    });
+    
+    function getCurrUserName(){
+      if (!auth.$getAuth()) return null;
+      return auth.$getAuth().displayName || 'Anonymous № '+ auth.$getAuth().uid;
+    }
+    
+    this.submit = (() => {
+      Message.submitMessage($scope.text, this.currentRoomID, getCurrUserName());
+      $scope.text = null;
+    });
+    
+    this.signInAnonymously = () => {
+      this.userName = null;
+      auth.$signInAnonymously().catch((error) => alert(error.message));
+    }
+    
+    this.signInWithEmailAndPassword = () => {
+      auth.$signInWithEmailAndPassword($scope.email, $scope.emailPassword)
+        .catch((error) => alert(error.message));
+    }
+    this.createUserWithEmailAndPassword = () => {
+      auth.$createUserWithEmailAndPassword($scope.createEmail, $scope.createEmailPassword)
+        .catch((error) => alert(error.message))
+        .then((user) => user.updateProfile({displayName : $scope.displayName}));
+    }
+    this.signOut = () => auth.$signOut();
+    
   }
-  
+
   angular
     .module('blocChat')
-    .controller('LandingCtrl', ['Message', 'Room', '$uibModal', '$scope', LandingCtrl]);
+    .controller('LandingCtrl', ['Message', 'Room', '$firebaseAuth', '$uibModal', '$scope', LandingCtrl]);
 })();

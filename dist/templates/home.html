@@ -1,10 +1,34 @@
-<div ng-repeat="room in landing.rooms">
+<div class="roomBut" ng-repeat="room in landing.rooms">
   <button ng-click='landing.pickARoom(room)'>{{room.$value}}</button>
 </div>
-<div class='message' ng-repeat='message in landing.messages'><p>{{message.userName}} {{message.sentAt}}</p><p>{{message.content}}</p><br></br></div>
+<div class="room">
+  <div class='message' ng-repeat='message in landing.messages'>
+    <p>{{message.userName}} {{message.sentAt}}</p>
+    <p>{{message.content}}</p>
+    <br></br>
+  </div>
+</div>
 <form ng-submit="landing.submit()">
-  Enter text and hit enter:
+  Enter your message here:
   <input type="text" ng-model="text" name="text" />
   <input type="submit" id="submit" value="Submit" />
 </form>
+<form ng-submit="landing.signInAnonymously()">
+  <input type="submit" id="signInAnon" value="Sign In Anonymously" />
+</form>
+<form ng-submit="landing.signInWithEmailAndPassword()">
+  Email:
+  <input type="text" ng-model="email" name="email" /> Password:
+  <input type="password" ng-model="emailPassword" name="emailPassword" />
+  <input type="submit" id="signInWithEmail" value="Sign In With Email" />
+</form>
+<form ng-submit="landing.createUserWithEmailAndPassword()">
+  Email:
+  <input type="text" ng-model="createEmail" name="createEmail" /> Password:
+  <input type="password" ng-model="createEmailPassword" name="createEmailPassword" /> Display Name:
+  <input type="text" ng-model="displayName" name="displayName" />
+  <input type="submit" id="signInWithEmail" value="Create Account" />
+</form>
+<button ng-click="landing.signOut()">Sign Out</button>
+
 <button ng-click="landing.processAddRoomRequest()">Add Room</button>
