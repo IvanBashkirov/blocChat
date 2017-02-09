@@ -1,14 +1,66 @@
+body {
+  background-image: url('/assets/images/cover.jpg');
+}
+
+h1 {
+  color: aliceblue;
+  display: inline;
+  
+}
+
 .room {
   background-color: cadetblue;
-  position: absolute;
-  left: 100px;
-  top: 20px;
+  position: relative;
   height: 250px;
   overflow: scroll;
   
 }
 
-.roomBut {
-  
+.roomDoor {
+  height: 150px;
+  width: 75px;
+  margin: 40px;
+  margin-bottom: 10px;
+  position:relative;
+  transition-duration: 0.2s;
+  cursor: url(/assets/images/eyesIcon.png), pointer;
 }
 
+.roomDoorCont {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 15px;
+  color: aliceblue;
+}
+
+header {
+  padding: 10px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+#signUpHeader {
+  display: inline;
+  position: absolute;
+  right: 0;
+  margin: 10px;
+}
+
+#signUpBut {
+  margin: 5px;
+  padding: 5px;
+  color: aliceblue;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#logInBut {
+  margin: 5px;
+  padding: 5px;
+  color: aliceblue;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 5px;
+  cursor: pointer;
+  
+  
+}
