@@ -52,6 +52,8 @@ header {
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgba(0,0,0,0.3);
+  
 }
 
 #logInBut {
@@ -61,6 +63,8 @@ header {
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgba(0,0,0,0.3);
+  
   
   
 }

@@ -4,10 +4,12 @@
     this.messages = null;
     this.userName = null;
     this.currentRoomID = null;
+    
     this.doorHover = function(e) {
       e.target.setAttribute('src', 'assets/images/openDoor.png');
       e.target.style.transform = 'scale(1.1)'
     }
+    
     this.doorHoverOff = function(e) {
       e.target.setAttribute('src', 'assets/images/closedDoor.png');
       e.target.style.transform = 'scale(1)'
