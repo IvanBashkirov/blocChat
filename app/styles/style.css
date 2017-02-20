@@ -8,20 +8,31 @@ h1 {
   
 }
 
+.time {
+  opacity: 0.5;
+  position: absolute;
+  right: 10px;
+}
+
 .room {
-  background-color: cadetblue;
+  vertical-align: top; 
   position: relative;
-  height: 250px;
-  overflow: scroll;
-  
+  width: 80%;
+  margin: 20px;
+  height: 400px;
+  background-color: rgba(0,0,0,0.4);
+  color: aliceblue;
+  border-radius: 8px;
+  padding: 15px;
+  display: inline-flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .roomDoor {
   height: 150px;
   width: 75px;
-  margin: 40px;
   margin-bottom: 10px;
-  position:relative;
   transition-duration: 0.2s;
   cursor: url(/assets/images/eyesIcon.png), pointer;
 }
@@ -31,6 +42,17 @@ h1 {
   text-align: center;
   padding-bottom: 15px;
   color: aliceblue;
+  width: 75px;
+  margin: 40px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  overflow: hidden;
+  transition-duration: 1s;
+  vertical-align: top; 
+}
+
+.room > :first-child {
+    margin-top: auto !important;
 }
 
 header {
@@ -52,6 +74,8 @@ header {
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgba(0,0,0,0.);
+  
 }
 
 #logInBut {
@@ -61,6 +85,14 @@ header {
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgba(0,0,0,0.3);
   
+}
+
+.displayHidden {
+  width: 0px;
+  opacity: 0;
+  margin-right: 0px;
+  margin-left: 0px;
   
 }

@@ -24,13 +24,17 @@
     }
     
     this.pickARoom = ((room) => {
+      if (room.$id === this.currentRoomID) {
+        this.currentRoomID = null;
+        return;
+      }
       this.currentRoomID = room.$id;
       this.messages = Message.getByRoomId(room.$id);
     });
     
     function getCurrUserName(){
       if (!auth.$getAuth()) return null;
-      return auth.$getAuth().displayName || 'Anonymous № '+ auth.$getAuth().uid;
+      return auth.$getAuth().displayName || 'Anonymous №'+ auth.$getAuth().uid;
     }
     
     this.submit = (() => {
