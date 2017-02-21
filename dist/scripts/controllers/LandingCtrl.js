@@ -1,6 +1,6 @@
 (function () {
 
-  function LandingCtrl(Message, Room, $firebaseAuth, $uibModal, $scope) {
+  function LandingCtrl(Message, Room, $location, $anchorScroll, $firebaseAuth, $uibModal, $scope) {
     this.messages = null;
     this.userName = null;
     this.currentRoomID = null;
@@ -30,6 +30,7 @@
         this.currentRoomID = null;
         return;
       }
+      this.currentRoom = room;
       this.currentRoomID = room.$id;
       this.messages = Message.getByRoomId(room.$id);
     });
@@ -40,6 +41,7 @@
     }
     
     this.submit = (() => {
+      if (!this.currentRoom) return;
       Message.submitMessage($scope.text, this.currentRoomID, getCurrUserName());
       $scope.text = null;
     });
@@ -64,5 +66,5 @@
 
   angular
     .module('blocChat')
-    .controller('LandingCtrl', ['Message', 'Room', '$firebaseAuth', '$uibModal', '$scope', LandingCtrl]);
+    .controller('LandingCtrl', ['Message', 'Room', '$location', '$anchorScroll', '$firebaseAuth', '$uibModal', '$scope', LandingCtrl]);
 })();
