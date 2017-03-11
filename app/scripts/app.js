@@ -16,4 +16,3 @@
     .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase'])
     .config(config);
 })();
-

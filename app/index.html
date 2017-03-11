@@ -2,43 +2,52 @@
 <html ng-app="blocChat">
 
 <head lang="en">
-  <meta charset="UTF-8">
-  <title>Bloc Chat</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/styles/style.css">
+    <meta charset="UTF-8">
+    <title>Bloc Chat</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-  <header>
-  <h1>Chatting Space</h1><div id='signUpHeader'><span id='signUpBut'>Sign Up</span><span id='logInBut'>Log In</span></div>
-  </header>
-  <ui-view></ui-view>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <!-- Angular -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-  <!-- AngularFire -->
-  <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBly_F0d_K8e5SNrCd5K0kEhZvM5KwmHiE",
-      authDomain: "blocchat-2f86a.firebaseapp.com",
-      databaseURL: "https://blocchat-2f86a.firebaseio.com",
-      storageBucket: "blocchat-2f86a.appspot.com",
-      messagingSenderId: "21723873419"
-    };
-    firebase.initializeApp(config);
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/services/Room.js"></script>
-  <script src="scripts/controllers/LandingCtrl.js"></script>
-  <script src="scripts/controllers/ModalCtrl.js"></script>
-  <script src="scripts/services/Message.js"></script>
-  <script src="scripts/directives/ScrollDir.js"></script>
+    <header ng-controller = 'AuthenticateCtrl as authenticate'>
+        <h1>Chatting Space</h1>
+        <div id='signUpHeader'>
+            <span class = 'headerUserName'> {{authenticate.userName()}}</span>
+            <span class='autBut' ng-show = '!authenticate.isAuth()' ng-click='authenticate.signUpButton()' >Sign Up</span>
+            <span class='autBut' ng-show = '!authenticate.isAuth()' ng-click='authenticate.logInButton()'>Log In</span>
+            <span class='autBut' ng-click='authenticate.signOut()' ng-show = 'authenticate.isAuth()'>Sign Out</span>
+        </div>
+    </header>
+    <ui-view></ui-view>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBly_F0d_K8e5SNrCd5K0kEhZvM5KwmHiE",
+            authDomain: "blocchat-2f86a.firebaseapp.com",
+            databaseURL: "https://blocchat-2f86a.firebaseio.com",
+            storageBucket: "blocchat-2f86a.appspot.com",
+            messagingSenderId: "21723873419"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/Room.js"></script>
+    <script src="scripts/services/User.js"></script>
+    <script src="scripts/controllers/LandingCtrl.js"></script>
+    <script src="scripts/controllers/ModalCtrl.js"></script>
+    <script src="scripts/controllers/LogInModalCtrl.js"></script>
+    <script src="scripts/controllers/SignUpModalCtrl.js"></script>
+    <script src="scripts/controllers/AuthenticateCtrl.js"></script>
+    <script src="scripts/services/Message.js"></script>
+    <script src="scripts/directives/ScrollDir.js"></script>
 </body>
 
 </html>

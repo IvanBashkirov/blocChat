@@ -25,7 +25,7 @@ h1 {
 }
 
 .room {
-  vertical-align: top; 
+  vertical-align: top;
   position: relative;
   width: 100%;
   height: 400px;
@@ -67,14 +67,14 @@ h1 {
   margin-right: 20px;
   overflow: hidden;
   transition-duration: 1s;
-  vertical-align: top; 
+  vertical-align: top;
 }
 
 .room > :first-child {
     margin-top: auto !important;
 }
 
-.message-input>textarea { 
+.message-input>textarea {
   padding: 8px;
   border-radius: 8px;
   color: aliceblue;
@@ -84,7 +84,7 @@ h1 {
 }
 
 .message-input{
-  
+
 }
 
 
@@ -107,7 +107,7 @@ header {
   margin: 10px;
 }
 
-#signUpBut {
+.autBut {
   margin: 5px;
   padding: 5px;
   color: aliceblue;
@@ -117,14 +117,8 @@ header {
   background-color: rgba(0,0,0,0.3);
 }
 
-#logInBut {
-  margin: 5px;
-  padding: 5px;
+.headerUserName {
   color: aliceblue;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgba(0,0,0,0.3);
 }
 
 .displayHidden {
