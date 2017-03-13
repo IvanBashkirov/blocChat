@@ -1,129 +1,142 @@
 body {
-  background-image: url('/assets/images/cover.jpg');
+    background-image: url('/assets/images/cover.jpg');
 }
 
 h1 {
-  color: aliceblue;
-  display: inline;
+    color: aliceblue;
+    display: inline;
 }
 
 .time {
-  opacity: 0.5;
-  position: absolute;
-  right: 10px;
+    opacity: 0.5;
+    position: absolute;
+    right: 10px;
 }
 
 .message-container {
-  display: inline-block;
-  width: 80%;
-  margin: 20px;         
+    display: inline-block;
+    width: 80%;
+    margin: 20px;
 }
 
 .message-content {
-  width : 90%;
-  height: auto;
+    width: 90%;
+    height: auto;
 }
 
 .room {
-  vertical-align: top;
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background-color: rgba(0,0,0,0.4);
-  color: aliceblue;
-  border-radius: 8px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  margin-bottom: 20px;
+    vertical-align: top;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: aliceblue;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin-bottom: 20px;
 }
 
 .roomDoor {
-  height: 150px;
-  width: 75px;
-  margin-bottom: 10px;
-  transition-duration: 0.2s;
-  cursor: url(/assets/images/eyesIcon.png), pointer;
+    height: 150px;
+    width: 75px;
+    margin-bottom: 10px;
+    transition-duration: 0.2s;
+    cursor: url(/assets/images/eyesIcon.png), pointer;
 }
 
 .nothing-here-placeholder {
-  align-self: center;
-  font-size:700%;
-  opacity: 0.75;
-  font-family:fantasy;
+    align-self: center;
+    font-size: 700%;
+    opacity: 0.75;
+    font-family: fantasy;
 }
-
-
 
 .roomDoorCont {
-  display: inline-block;
-  text-align: center;
-  padding-bottom: 15px;
-  color: aliceblue;
-  width: 75px;
-  margin: 40px;
-  margin-bottom: 30px;
-  margin-right: 20px;
-  overflow: hidden;
-  transition-duration: 1s;
-  vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 15px;
+    color: aliceblue;
+    width: 75px;
+    margin: 40px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    overflow: hidden;
+    transition-duration: 1s;
+    vertical-align: top;
 }
 
-.room > :first-child {
+.room> :first-child {
     margin-top: auto !important;
 }
 
 .message-input>textarea {
-  padding: 8px;
-  border-radius: 8px;
-  color: aliceblue;
-  background-color: rgba(0,0,0,0.7);
-  width: 100%;
-  resize: vertical;
+    padding: 8px;
+    border-radius: 8px;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    resize: vertical;
 }
 
-.message-input{
-
-}
-
+.message-input {}
 
 #submit {
-  border-radius: 8px;
-  background-color: rgba(255,255,255,0.8);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-
-
 header {
-  padding: 10px;
-  background-color: rgba(0,0,0,0.2);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #signUpHeader {
-  display: inline;
-  position: absolute;
-  right: 0;
-  margin: 10px;
+    display: inline;
+    position: absolute;
+    right: 0;
+    margin: 10px;
 }
 
 .autBut {
-  margin: 5px;
-  padding: 5px;
-  color: aliceblue;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgba(0,0,0,0.3);
+    margin: 5px;
+    padding: 5px;
+    color: aliceblue;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .headerUserName {
-  color: aliceblue;
+    color: aliceblue;
+}
+
+#addRoomBut {
+  margin: 83px 44px;
+  font-size: 5em;
+  color: #674237;
+  border-radius: 51%;
+  background-color: rgba(172, 86, 187, 0.84);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border-color: rgba(138, 43, 226, 0.34);
+  outline: none;
+}
+
+#addRoomBut > p {
+    position: absolute;
+    margin: auto;
+    top: -30px;
+    left: 8px;
 }
 
 .displayHidden {
-  width: 0px;
-  opacity: 0;
-  margin-right: 0px;
-  margin-left: 0px;
+    width: 0px;
+    opacity: 0;
+    margin-right: 0px;
+    margin-left: 0px;
 }

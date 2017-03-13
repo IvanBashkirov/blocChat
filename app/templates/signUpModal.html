@@ -1,0 +1,15 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">Sign Up</h3>
+  </div>
+  <div class="modal-body">
+    <button class='but' ng-click='signUpModal.signUpWithEmailAndPassword()'>Sign Up</button>
+    Email:
+    <input type="email" ng-model="signUpEmail" name="signUpEmail" />
+    Password:
+    <input type="password" ng-model="signUpPassword" name="signUpPassword" />
+    Display Name:
+    <input type="text" ng-model="signUpDisplayName" name="signUpDisplayName" />
+    <button ng-click='signUpModal.cancel()'>Cancel</button>
+  </div>
+</div>
