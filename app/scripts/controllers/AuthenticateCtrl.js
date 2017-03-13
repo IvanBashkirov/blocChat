@@ -28,10 +28,6 @@
     this.signOut = () => {
       User.signOut();
     }
-
-
-
-
   }
   angular
     .module('blocChat')
