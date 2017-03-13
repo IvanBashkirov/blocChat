@@ -4,6 +4,9 @@
     this.messages = null;
     this.currentRoomID = null;
     this.rooms = Room.all;
+    this.addRoom = Room.addRoom;
+    this.roomNameInput = null;
+
 
     this.doorHover = function(e) {
       e.target.setAttribute('src', 'assets/images/openDoor.png');
@@ -22,6 +25,15 @@
         controller: 'ModalCtrl',
         controllerAs: 'modal'
       });
+    }
+
+    this.addRoomPopover = {
+      templateUrl: '/templates/addRoomPopover.html',
+      title: 'Add Room'
+    }
+
+    this.confirm = () => {
+      this.addRoom(this.roomNameInput);
     }
 
     this.pickARoom = ((room) => {

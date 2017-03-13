@@ -3,15 +3,19 @@
     var ref = firebase.database().ref();
     var rooms = $firebaseArray(ref.child('rooms'));
 
-    var addRoom = function(){
-      rooms.$loaded().then(()=>rooms.$add('room' + (rooms.length + 1)));
+    var addRoom = function(roomName){
+      console.log(roomName);
+      if (!roomName || (roomName.length > 20)) {
+        roomName = 'room' + (rooms.length + 1)
+      }
+      rooms.$loaded().then(()=>rooms.$add(roomName));
     };
     return {
       all: rooms,
       addRoom
     };
   }
-  
+
   angular
     .module('blocChat')
     .factory('Room',['$firebaseArray', Room]);
