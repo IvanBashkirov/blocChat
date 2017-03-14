@@ -6,7 +6,7 @@
     var addRoom = function(roomName){
       console.log(roomName);
       if (!roomName || (roomName.length > 20)) {
-        roomName = 'room' + (rooms.length + 1)
+        roomName = 'room ' + (rooms.length + 1)
       }
       rooms.$loaded().then(()=>rooms.$add(roomName));
     };

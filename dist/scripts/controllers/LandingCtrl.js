@@ -6,7 +6,7 @@
     this.rooms = Room.all;
     this.addRoom = Room.addRoom;
     this.roomNameInput = null;
-
+    this.addRoomPopoverIsOpen = false;
 
     this.doorHover = function(e) {
       e.target.setAttribute('src', 'assets/images/openDoor.png');

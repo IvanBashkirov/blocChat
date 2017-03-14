@@ -114,24 +114,56 @@ header {
     color: aliceblue;
 }
 
-#addRoomBut {
-  margin: 83px 44px;
+.addRoomButs {
   font-size: 5em;
   color: #674237;
   border-radius: 51%;
-  background-color: rgba(172, 86, 187, 0.84);
+  background-color: rgba(172, 86, 187, 0.75);
   height: 60px;
   width: 60px;
   position: relative;
   border-color: rgba(138, 43, 226, 0.34);
   outline: none;
+  transition-duration: 0.75s;
+}
+
+#addRoomBut {
+  margin: 83px 44px;
+
+}
+
+#addRoomTickBut {
+  transform: translateX(-30px) rotate(45deg);
+  background-color: rgba(143, 187, 39, 0.75);
+  border-color: rgba(226, 226, 43, 0.34);
+}
+
+input[name='roomNameInput'] {
+  width: 100%
 }
 
 #addRoomBut > p {
     position: absolute;
     margin: auto;
     top: -30px;
-    left: 8px;
+    left: 7px;
+}
+
+#addRoomTickBut>.tick {
+  position: absolute;
+  display: block;
+  width: 19px;
+  height: 5px;
+  background-color: #674237;
+  left: 20px;
+  top: 37px;
+}
+
+#addRoomTickBut>.kick {
+  width: 5px;
+  height: 30px;
+  top: 11px;
+  left: 34px;
 }
 
 .displayHidden {
@@ -139,4 +171,11 @@ header {
     opacity: 0;
     margin-right: 0px;
     margin-left: 0px;
+}
+
+#addRoomBut.rotateAddButton {
+  transform:  translateX(-35px) rotate(-405deg);
+  background-color: rgba(255, 0, 0, 0.75);
+  margin-right: 0px;
+  margin-bottom: 0px;
 }

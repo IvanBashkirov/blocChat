@@ -2,7 +2,13 @@
     <img class='roomDoor' ng-mouseover=landing.doorHover($event) ng-mouseleave=landing.doorHoverOff($event) src='assets/images/closedDoor.png' ng-click='landing.pickARoom(room)'>
     <figcaption>{{room.$value}}</figcaption>
 </div>
-<button uib-popover-template='landing.addRoomPopover.templateUrl', type='button', id='addRoomBut' ng-show='!landing.currentRoomID'><p>+</p></button>
+<button ng-class='{rotateAddButton: landing.addRoomPopoverIsOpen}' popover-placement='auto top' uib-popover-template='landing.addRoomPopover.templateUrl' popover-trigger="'outsideClick'" popover-is-open="landing.addRoomPopoverIsOpen" ng-click="landing.addRoomPopoverIsOpen = !landing.addRoomPopoverIsOpen"
+    type='button' , class='addRoomButs' id='addRoomBut' ng-show='!landing.currentRoomID'><p>+</p>
+  </button>
+<button class='addRoomButs' id='addRoomTickBut' ng-show='!landing.currentRoomID && landing.addRoomPopoverIsOpen' ng-click='landing.confirm(); landing.addRoomPopoverIsOpen = false'>
+  <div class='tick'></div>
+  <div class='tick kick'></div>
+  </button>
 
 <div class='message-container' ng-show='landing.currentRoomID'>
     <div class="room" scroll-bottom="landing.messages">
