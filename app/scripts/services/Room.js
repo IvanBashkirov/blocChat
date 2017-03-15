@@ -4,7 +4,6 @@
     var rooms = $firebaseArray(ref.child('rooms'));
 
     var addRoom = function(roomName) {
-      console.log(roomName);
       if (!roomName || (roomName.length > 21) || (roomName.length < 3)) {
         alert("The room name must be between 4 and 20 characters long")
       } else {
