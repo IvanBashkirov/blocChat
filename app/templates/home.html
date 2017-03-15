@@ -1,26 +1,31 @@
-<div class='roomDoorCont' ng-repeat="room in landing.rooms" ng-class="{displayHidden: landing.currentRoomID !== null && landing.currentRoomID !== room.$id}">
-    <img class='roomDoor' ng-mouseover=landing.doorHover($event) ng-mouseleave=landing.doorHoverOff($event) src='assets/images/closedDoor.png' ng-click='landing.pickARoom(room)'>
-    <figcaption>{{room.$value}}</figcaption>
-</div>
-<button ng-class='{rotateAddButton: landing.addRoomPopoverIsOpen}' popover-placement='auto top' uib-popover-template='landing.addRoomPopover.templateUrl' popover-trigger="'outsideClick'" popover-is-open="landing.addRoomPopoverIsOpen" ng-click="landing.addRoomPopoverIsOpen = !landing.addRoomPopoverIsOpen"
-    type='button' , class='addRoomButs' id='addRoomBut' ng-show='!landing.currentRoomID'><p>+</p>
+<div class=mainContainer>
+    <div class='roomDoorCont' ng-repeat="room in landing.rooms" ng-class="{displayHidden: landing.currentRoomID !== null && landing.currentRoomID !== room.$id}">
+        <img class='roomDoor' ng-mouseover=landing.doorHover($event) ng-mouseleave=landing.doorHoverOff($event) src='assets/images/closedDoor.png' ng-click='landing.pickARoom(room)'>
+        <figcaption>{{room.$value}}</figcaption>
+    </div>
+    <div class='addRoomButCont' popover-placement='auto right' popover-trigger="'none'" uib-popover-template='landing.addRoomPopover.templateUrl' popover-is-open="landing.addRoomPopoverIsOpen">
+
+
+        <button id='addRoomBut' ng-class='{rotateAddButton: landing.addRoomPopoverIsOpen}' ng-click="landing.addRoomPopoverIsOpen = !landing.addRoomPopoverIsOpen" class='addRoomButs' ng-show='!landing.currentRoomID'><p>+</p>
   </button>
-<button class='addRoomButs' id='addRoomTickBut' ng-show='!landing.currentRoomID && landing.addRoomPopoverIsOpen' ng-click='landing.confirm(); landing.addRoomPopoverIsOpen = false'>
+        <button class='addRoomButs' id='addRoomTickBut' ng-show='!landing.currentRoomID && landing.addRoomPopoverIsOpen' ng-click='landing.confirm(); landing.addRoomPopoverIsOpen = false'>
   <div class='tick'></div>
   <div class='tick kick'></div>
   </button>
-
-<div class='message-container' ng-show='landing.currentRoomID'>
-    <div class="room" scroll-bottom="landing.messages">
-        <div class='message' ng-repeat='message in landing.messages'>
-            <p>{{message.userName}} <span class='time'>{{message.sentAt}}</span></p>
-            <p class='message-content'>{{message.content}}</p>
-            <br></br>
-        </div>
-        <p class='nothing-here-placeholder' ng-show="!landing.messages.length">This room is empty</p>
     </div>
-    <form class='message-input' ng-submit="landing.submit()">
-        <textarea placeholder="Enter you message here" ng-model="text" name="text"></textarea>
-        <input type="submit" id="submit" value="Send" />
-    </form>
+
+    <div class='message-container' ng-show='landing.currentRoomID'>
+        <div class="room" scroll-bottom="landing.messages">
+            <div class='message' ng-repeat='message in landing.messages'>
+                <p>{{message.userName}} <span class='time'>{{message.sentAt}}</span></p>
+                <p class='message-content'>{{message.content}}</p>
+                <br></br>
+            </div>
+            <p class='nothing-here-placeholder' ng-show="!landing.messages.length">This room is empty</p>
+        </div>
+        <form class='message-input' ng-submit="landing.submit()">
+            <textarea placeholder="Enter you message here" ng-model="text" name="text"></textarea>
+            <input type="submit" id="submit" value="Send" />
+        </form>
+    </div>
 </div>

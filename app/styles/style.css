@@ -1,181 +1,184 @@
 body {
-    background-image: url('/assets/images/cover.jpg');
+  background-image : url('/assets/images/cover.jpg');
 }
 
 h1 {
-    color: aliceblue;
-    display: inline;
+  display : inline;
+  color   : aliceblue;
 }
 
 .time {
-    opacity: 0.5;
-    position: absolute;
-    right: 10px;
+  position : absolute;
+  right    : 10px;
+  opacity  : .5;
 }
 
 .message-container {
-    display: inline-block;
-    width: 80%;
-    margin: 20px;
+  display : inline-block;
+  width   : 80%;
+  margin  : 20px;
 }
 
 .message-content {
-    width: 90%;
-    height: auto;
+  width  : 90%;
+  height : auto;
+}
+
+.addRoomButCont {
+  display: inline-block;
+  position: relative;
+  margin: 80px 45px;
+  margin-right: 0px;
 }
 
 .room {
-    vertical-align: top;
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: aliceblue;
-    border-radius: 8px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    margin-bottom: 20px;
+  display          : flex;
+  position         : relative;
+  width            : 100%;
+  height           : 400px;
+  margin-bottom    : 20px;
+  padding          : 15px;
+  color            : aliceblue;
+  overflow         : auto;
+  border-radius    : 8px;
+  background-color : rgba(0, 0, 0, .4);
+  vertical-align   : top;
+  flex-direction   : column;
 }
 
 .roomDoor {
-    height: 150px;
-    width: 75px;
-    margin-bottom: 10px;
-    transition-duration: 0.2s;
-    cursor: url(/assets/images/eyesIcon.png), pointer;
+  width               : 75px;
+  height              : 150px;
+  margin-bottom       : 10px;
+  transition-duration : .2s;
+  cursor              : url(/assets/images/eyesIcon.png),
+                        pointer;
 }
 
 .nothing-here-placeholder {
-    align-self: center;
-    font-size: 700%;
-    opacity: 0.75;
-    font-family: fantasy;
+  opacity     : .75;
+  align-self  : center;
+  font-family : fantasy;
+  font-size   : 700%;
+}
+
+.mainContainer {
+  margin-left: 30px;
 }
 
 .roomDoorCont {
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 15px;
-    color: aliceblue;
-    width: 75px;
-    margin: 40px;
-    margin-bottom: 30px;
-    margin-right: 20px;
-    overflow: hidden;
-    transition-duration: 1s;
-    vertical-align: top;
+  display             : inline-block;
+  width               : 75px;
+  margin              : 40px;
+  margin-right        : 20px;
+  margin-bottom       : 30px;
+  padding-bottom      : 15px;
+  color               : aliceblue;
+  overflow            : hidden;
+  text-align          : center;
+  vertical-align      : top;
+  transition-duration : 1s;
 }
 
 .room> :first-child {
-    margin-top: auto !important;
+  margin-top : auto !important;
 }
 
 .message-input>textarea {
-    padding: 8px;
-    border-radius: 8px;
-    color: aliceblue;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    resize: vertical;
-}
-
-.message-input {}
-
-#submit {
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.8);
+  width            : 100%;
+  padding          : 8px;
+  color            : aliceblue;
+  border-radius    : 8px;
+  background-color : rgba(0, 0, 0, .7);
+  resize           : vertical;
 }
 
 header {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-#signUpHeader {
-    display: inline;
-    position: absolute;
-    right: 0;
-    margin: 10px;
+  padding          : 10px;
+  background-color : rgba(0, 0, 0, .2);
 }
 
 .autBut {
-    margin: 5px;
-    padding: 5px;
-    color: aliceblue;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-.headerUserName {
-    color: aliceblue;
-}
-
-.addRoomButs {
-  font-size: 5em;
-  color: #674237;
-  border-radius: 51%;
-  background-color: rgba(172, 86, 187, 0.75);
-  height: 60px;
-  width: 60px;
-  position: relative;
-  border-color: rgba(138, 43, 226, 0.34);
-  outline: none;
-  transition-duration: 0.75s;
-}
-
-#addRoomBut {
-  margin: 83px 44px;
-
-}
-
-#addRoomTickBut {
-  transform: translateX(-30px) rotate(45deg);
-  background-color: rgba(143, 187, 39, 0.75);
-  border-color: rgba(226, 226, 43, 0.34);
-}
-
-input[name='roomNameInput'] {
-  width: 100%
-}
-
-#addRoomBut > p {
-    position: absolute;
-    margin: auto;
-    top: -30px;
-    left: 7px;
-}
-
-#addRoomTickBut>.tick {
-  position: absolute;
-  display: block;
-  width: 19px;
-  height: 5px;
-  background-color: #674237;
-  left: 20px;
-  top: 37px;
-}
-
-#addRoomTickBut>.kick {
-  width: 5px;
-  height: 30px;
-  top: 11px;
-  left: 34px;
+  margin           : 5px;
+  padding          : 5px;
+  color            : aliceblue;
+  border           : 1px solid rgba(255, 255, 255, .15);
+  border-radius    : 5px;
+  background-color : rgba(0, 0, 0, .3);
+  cursor           : pointer;
 }
 
 .displayHidden {
-    width: 0px;
-    opacity: 0;
-    margin-right: 0px;
-    margin-left: 0px;
+  width        : 0;
+  margin-right : 0;
+  margin-left  : 0;
+  opacity      : 0;
+}
+
+.headerUserName {
+  color : aliceblue;
+}
+
+.addRoomButs {
+  position            : relative;
+  width               : 60px;
+  height              : 60px;
+  color               : #674237;
+  border-color        : rgba(138, 43, 226, .34);
+  border-radius       : 51%;
+  background-color    : rgba(172, 86, 187, .75);
+  outline             : none;
+  font-size           : 5em;
+  transition-duration : .75s;
+}
+
+input[name='roomNameInput'] {
+  width : 100%;
+}
+
+#addRoomTickBut {
+  border-color     : rgba(226, 226, 43, .34);
+  background-color : rgba(143, 187, 39, .75);
+  transform        : translateX(-30px) rotate(45deg);
+}
+
+#addRoomBut>p {
+  position : absolute;
+  top      : -30px;
+  left     : 7px;
+  margin   : auto;
+}
+
+#addRoomTickBut>.tick {
+  display          : block;
+  position         : absolute;
+  top              : 38px;
+  left             : 17px;
+  width            : 19px;
+  height           : 5px;
+  background-color : #674237;
+}
+
+#addRoomTickBut>.kick {
+  top    : 9px;
+  left   : 31px;
+  width  : 5px;
+  height : 30px;
 }
 
 #addRoomBut.rotateAddButton {
-  transform:  translateX(-35px) rotate(-405deg);
-  background-color: rgba(255, 0, 0, 0.75);
-  margin-right: 0px;
-  margin-bottom: 0px;
+  background-color : rgba(255, 0, 0, .75);
+  transform        : translateX(-35px) rotate(-405deg);
+}
+
+#signUpHeader {
+  display  : inline;
+  position : absolute;
+  right    : 0;
+  margin   : 10px;
+}
+
+#submit {
+  border-radius    : 8px;
+  background-color : rgba(255, 255, 255, .8);
 }

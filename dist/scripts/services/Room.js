@@ -3,12 +3,13 @@
     var ref = firebase.database().ref();
     var rooms = $firebaseArray(ref.child('rooms'));
 
-    var addRoom = function(roomName){
+    var addRoom = function(roomName) {
       console.log(roomName);
-      if (!roomName || (roomName.length > 20)) {
-        roomName = 'room ' + (rooms.length + 1)
+      if (!roomName || (roomName.length > 21) || (roomName.length < 3)) {
+        alert("The room name must be between 4 and 20 characters long")
+      } else {
+        rooms.$loaded().then(() => rooms.$add(roomName));
       }
-      rooms.$loaded().then(()=>rooms.$add(roomName));
     };
     return {
       all: rooms,
@@ -18,5 +19,5 @@
 
   angular
     .module('blocChat')
-    .factory('Room',['$firebaseArray', Room]);
+    .factory('Room', ['$firebaseArray', Room]);
 })();
