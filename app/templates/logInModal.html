@@ -1,12 +1,12 @@
-<div>
-  <div class="modal-header">
-    <h3 class="modal-title">Please Log In</h3>
-  </div>
-  <div class="modal-body">
-    <button class='but' ng-click='logInModal.signInAnonymously()'>Anonymously</button>
-    <button ng-click='logInModal.logInWithEmailAndPassword()'>Email/Password</button>
-    <input type="email" ng-model="logInEmail" name="logInEmail" /> Password:
-    <input type="password" ng-model="logInPassword" name="logInPassword" />
-    <button ng-click='logInModal.cancel()'>Cancel</button>
-  </div>
+<div class="modal-header">
+  <h3 class="modal-title">Please Log In</h3>
+</div>
+<div class="modal-body">
+  <p class='modal-paragraph-indent'>Log in with your</p>
+  <button class='btn btn-primary' ng-click='logInModal.logInWithEmailAndPassword()'>Email/Password</button>
+  <input class='my-modal-text-field' placeholder='E-mail:' type="email" ng-model="logInEmail" name="logInEmail"/>
+  <input class='my-modal-text-field' placeholder='Password:' type="password" ng-model="logInPassword" name="logInPassword"/>
+  <p class='modal-paragraph-indent modal-paragraph'>Or</p>
+  <button class='btn btn-primary' ng-click='logInModal.signInAnonymously()'>Anonymously</button>
+  <button class='btn btn-warning my-cancel-button' ng-click='logInModal.cancel()'>Cancel</button>
 </div>

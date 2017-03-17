@@ -18,15 +18,6 @@
       e.target.style.transform = 'scale(1)'
     }
 
-
-    this.processAddRoomRequest = function () {
-      $uibModal.open({
-        templateUrl: '/templates/modal.html',
-        controller: 'ModalCtrl',
-        controllerAs: 'modal'
-      });
-    }
-
     this.addRoomPopover = {
       templateUrl: '/templates/addRoomPopover.html',
       title: 'Add Room'
@@ -36,20 +27,20 @@
       this.addRoom(this.roomNameInput);
     }
 
-    this.pickARoom = ((room) => {
+    this.pickARoom = (room) => {
       if (room.$id === this.currentRoomID) {
         this.currentRoomID = null;
       } else {
         this.currentRoomID = room.$id;
         this.messages = Message.getByRoomId(room.$id);
       }
-    });
+    };
 
-    this.submit = (() => {
+    this.submit = () => {
       if (!this.currentRoomID) return;
       Message.submitMessage($scope.text, this.currentRoomID);
       $scope.text = null;
-    });
+    };
   }
 
   angular

@@ -5,7 +5,8 @@
       $uibModal.open({
         templateUrl: '/templates/logInModal.html',
         controller: 'LogInModalCtrl',
-        controllerAs: 'logInModal'
+        controllerAs: 'logInModal',
+        windowTopClass: 'my-login-modal-width'
       });
     }
 

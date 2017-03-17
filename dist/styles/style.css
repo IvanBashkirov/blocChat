@@ -19,16 +19,39 @@ h1 {
   margin  : 20px;
 }
 
+.modal-paragraph {
+  margin : 10px 0px;
+}
+
+.modal-paragraph-indent {
+  margin-left: 6px;
+}
+
+.my-cancel-button {
+  float : right;
+}
+
+.my-modal-text-field {
+  padding        : 6px 12px;
+  border         : 1px solid rgb(51, 122, 183);
+  border-radius  : 4px;
+  vertical-align : middle;
+}
+
+.my-login-modal-width> .modal-dialog {
+  width : 511px;
+}
+
 .message-content {
   width  : 90%;
   height : auto;
 }
 
 .addRoomButCont {
-  display: inline-block;
-  position: relative;
-  margin: 80px 45px;
-  margin-right: 0px;
+  display      : inline-block;
+  position     : relative;
+  margin       : 80px 45px;
+  margin-right : 0px;
 }
 
 .room {
@@ -63,7 +86,7 @@ h1 {
 }
 
 .mainContainer {
-  margin-left: 30px;
+  margin-left : 30px;
 }
 
 .roomDoorCont {
