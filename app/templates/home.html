@@ -16,7 +16,7 @@
 </span>
 
   <div class='message-container' ng-show='landing.currentRoomID'>
-    <div class="room" scroll-bottom="landing.messages">
+    <div class="room">
       <div class='message' ng-repeat='message in landing.messages'>
         <p>{{message.userName}}
           <span class='time'>{{message.sentAt}}</span>
@@ -27,7 +27,7 @@
       <p class='nothing-here-placeholder' ng-show="!landing.messages.length">This room is empty</p>
     </div>
     <form class='message-input' ng-submit="landing.submit()">
-      <textarea placeholder="Enter you message here" ng-model="text" name="text"></textarea>
+      <textarea ng-keypress='landing.pressedEnterWritingMessage($event)' placeholder="Enter you message here" ng-model="text" name="text"></textarea>
       <input type="submit" id="submit" value="Send"/>
     </form>
   </div>

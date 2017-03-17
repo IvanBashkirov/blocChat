@@ -37,6 +37,13 @@
       }
     };
 
+    this.pressedEnterWritingMessage = (e) => {
+      if (e.keyCode == 13 && !e.shiftKey) {
+        this.submit();
+        e.preventDefault();
+      }
+    }
+
     this.submit = () => {
       if (!this.currentRoomID) return;
       Message.submitMessage($scope.text, this.currentRoomID);
