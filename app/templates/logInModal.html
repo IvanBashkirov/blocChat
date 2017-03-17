@@ -2,10 +2,12 @@
   <h3 class="modal-title">Please log in</h3>
 </div>
 <div class="modal-body">
-  <p class='modal-paragraph'>Log in with your</p>
-  <button class='btn btn-primary' ng-click='logInModal.logInWithEmailAndPassword()'>Email/Password</button>
-  <input class='my-modal-text-field' placeholder='E-mail:' type="email" ng-model="logInEmail" name="logInEmail"/>
-  <input class='my-modal-text-field' placeholder='Password:' type="password" ng-model="logInPassword" name="logInPassword"/>
+  <form ng-submit='logInModal.logInWithEmailAndPassword()'>
+    <p class='modal-paragraph'>Log in with your</p>
+    <button class='btn btn-primary' type='submit'>Email/Password</button>
+    <input class='my-modal-text-field' placeholder='E-mail:' type="email" ng-model="logInEmail" name="logInEmail"/>
+    <input class='my-modal-text-field' placeholder='Password:' type="password" ng-model="logInPassword" name="logInPassword"/>
+  </form>
   <p class='modal-paragraph'>Or</p>
   <div class=my-modal-footer>
     <button class='btn btn-primary' ng-click='logInModal.signInAnonymously()'>Anonymously</button>
