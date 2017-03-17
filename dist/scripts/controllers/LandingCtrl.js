@@ -25,6 +25,7 @@
 
     this.confirm = () => {
       this.addRoom(this.roomNameInput);
+      this.addRoomPopoverIsOpen = false;
     }
 
     this.pickARoom = (room) => {

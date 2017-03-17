@@ -1,4 +1,6 @@
 <div>
-    What shall be the name of this room?
+  What shall be the name of this room?
+  <form ng-submit='landing.confirm()'>
     <input focus-on-condition='landing.addRoomPopoverIsOpen' type='text' ng-model='landing.roomNameInput' name='roomNameInput'>
+  </form>
 </div>

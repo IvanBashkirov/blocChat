@@ -8,10 +8,14 @@ h1 {
 }
 
 .header-container {
+  z-index  : 1;
   position : fixed;
   top      : 0px;
   width    : 100%;
-  z-index: 1;
+}
+
+.my-addRoom-form {
+  display : inline;
 }
 
 .time {
@@ -27,17 +31,23 @@ h1 {
 }
 
 .modal-paragraph {
-  margin : 10px 0px;
+  margin      : 10px 0px;
   margin-left : 6px;
 }
 
 .modal-paragraph:first-child {
-  margin-top: 0px;
+  margin-top : 0px;
 }
-
 
 .my-cancel-button {
   float : right;
+}
+
+.door-name-caption {
+  padding          : 5px;
+  overflow-wrap    : break-word;
+  border-radius    : 3px;
+  background-color : rgba(0, 0, 0, 0.62);
 }
 
 .my-modal-text-field {
@@ -55,7 +65,6 @@ h1 {
   width : 692px;
 }
 
-
 .message-content {
   width  : 90%;
   height : auto;
@@ -64,8 +73,8 @@ h1 {
 .addRoomButCont {
   display      : inline-block;
   position     : relative;
-  margin       : 80px 45px;
-  margin-right : 0px;
+  margin       : 80px 0px;
+  padding-left : 45px;
 }
 
 .room {
@@ -105,17 +114,18 @@ h1 {
 }
 
 .roomDoorCont {
-  display             : inline-block;
-  width               : 75px;
-  margin              : 40px;
-  margin-right        : 20px;
-  margin-bottom       : 30px;
-  padding-bottom      : 15px;
-  color               : aliceblue;
-  overflow            : hidden;
-  text-align          : center;
-  vertical-align      : top;
-  transition-duration : 1s;
+  display                    : inline-block;
+  width                      : 75px;
+  margin                     : 40px;
+  margin-right               : 20px;
+  margin-bottom              : 30px;
+  padding-bottom             : 15px;
+  color                      : aliceblue;
+  overflow                   : hidden;
+  text-align                 : center;
+  vertical-align             : top;
+  transition-duration        : 1s;
+  transition-timing-function : cubic-bezier(0.38, -0.42, 0.65, 1.4);
 }
 
 .room> :first-child {
@@ -175,7 +185,7 @@ input[name='roomNameInput'] {
 }
 
 .my-modal-footer {
-  margin-top: 10px;
+  margin-top : 10px;
 }
 
 #addRoomTickBut {
