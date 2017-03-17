@@ -1,15 +1,17 @@
 <div>
   <div class="modal-header">
-    <h3 class="modal-title">Sign Up</h3>
+    <h3 class="modal-title">Please create your account</h3>
   </div>
   <div class="modal-body">
-    <button class='but' ng-click='signUpModal.signUpWithEmailAndPassword()'>Sign Up</button>
-    Email:
-    <input type="email" ng-model="signUpEmail" name="signUpEmail" />
-    Password:
-    <input type="password" ng-model="signUpPassword" name="signUpPassword" />
-    Display Name:
-    <input type="text" ng-model="signUpDisplayName" name="signUpDisplayName" />
-    <button ng-click='signUpModal.cancel()'>Cancel</button>
+    <p class='modal-paragraph'>Sign up with your</p>
+    <button class='btn btn-primary' ng-click='signUpModal.signUpWithEmailAndPassword()'>E-mail/Password</button>
+    <input class='my-modal-text-field' placeholder='E-mail:' type="email" ng-model="signUpEmail" name="signUpEmail"/>
+    <input class='my-modal-text-field' placeholder='Password:' type="password" ng-model="signUpPassword" name="signUpPassword"/>
+    <input class='my-modal-text-field' placeholder='Display Name:' type="text" ng-model="signUpDisplayName" name="signUpDisplayName"/>
+    <p class='modal-paragraph'>Or log in</p>
+    <div class=my-modal-footer>
+      <button class='btn btn-primary' ng-click='logInModal.signInAnonymously()'>Anonymously</button>
+      <button class='btn btn-warning my-cancel-button' ng-click='signUpModal.cancel()'>Cancel</button>
+    </div>
   </div>
 </div>

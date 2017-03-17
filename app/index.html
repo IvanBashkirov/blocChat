@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html ng-app="blocChat">
 
-<head lang="en">
+  <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/style.css">
-</head>
+  </head>
 
-<body>
-    <header ng-controller = 'AuthenticateCtrl as authenticate'>
+  <body>
+    <div class='header-container'>
+      <header ng-controller='AuthenticateCtrl as authenticate'>
         <h1>Chatting Space</h1>
         <div id='signUpHeader'>
-            <span class = 'headerUserName'> {{authenticate.userName()}}</span>
-            <span class='autBut' ng-show = '!authenticate.isAuth()' ng-click='authenticate.signUpButton()' >Sign Up</span>
-            <span class='autBut' ng-show = '!authenticate.isAuth()' ng-click='authenticate.logInButton()'>Log In</span>
-            <span class='autBut' ng-click='authenticate.signOut()' ng-show = 'authenticate.isAuth()'>Sign Out</span>
+          <span class='headerUserName'>
+            {{authenticate.userName()}}</span>
+          <span class='autBut' ng-show='!authenticate.isAuth()' ng-click='authenticate.signUpButton()'>Sign Up</span>
+          <span class='autBut' ng-show='!authenticate.isAuth()' ng-click='authenticate.logInButton()'>Log In</span>
+          <span class='autBut' ng-click='authenticate.signOut()' ng-show='authenticate.isAuth()'>Sign Out</span>
         </div>
-    </header>
+      </header>
+    </div>
     <ui-view></ui-view>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- Angular -->
@@ -26,15 +29,15 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
     <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBly_F0d_K8e5SNrCd5K0kEhZvM5KwmHiE",
-            authDomain: "blocchat-2f86a.firebaseapp.com",
-            databaseURL: "https://blocchat-2f86a.firebaseio.com",
-            storageBucket: "blocchat-2f86a.appspot.com",
-            messagingSenderId: "21723873419"
-        };
-        firebase.initializeApp(config);
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBly_F0d_K8e5SNrCd5K0kEhZvM5KwmHiE",
+        authDomain: "blocchat-2f86a.firebaseapp.com",
+        databaseURL: "https://blocchat-2f86a.firebaseio.com",
+        storageBucket: "blocchat-2f86a.appspot.com",
+        messagingSenderId: "21723873419"
+      };
+      firebase.initializeApp(config);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -48,6 +51,6 @@
     <script src="scripts/services/Message.js"></script>
     <script src="scripts/directives/FocusOnCondition.js"></script>
     <script src="scripts/directives/ClickOutside.js"></script>
-</body>
+  </body>
 
 </html>

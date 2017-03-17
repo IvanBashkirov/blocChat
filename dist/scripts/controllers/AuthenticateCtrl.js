@@ -14,7 +14,8 @@
       $uibModal.open({
         templateUrl: '/templates/signUpModal.html',
         controller: 'SignUpModalCtrl',
-        controllerAs: 'signUpModal'
+        controllerAs: 'signUpModal',
+        windowTopClass: 'my-signup-modal-width'
       });
     }
 

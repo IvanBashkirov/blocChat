@@ -7,6 +7,13 @@ h1 {
   color   : aliceblue;
 }
 
+.header-container {
+  position : fixed;
+  top      : 0px;
+  width    : 100%;
+  z-index: 1;
+}
+
 .time {
   position : absolute;
   right    : 10px;
@@ -21,11 +28,13 @@ h1 {
 
 .modal-paragraph {
   margin : 10px 0px;
+  margin-left : 6px;
 }
 
-.modal-paragraph-indent {
-  margin-left: 6px;
+.modal-paragraph:first-child {
+  margin-top: 0px;
 }
+
 
 .my-cancel-button {
   float : right;
@@ -41,6 +50,11 @@ h1 {
 .my-login-modal-width> .modal-dialog {
   width : 511px;
 }
+
+.my-signup-modal-width> .modal-dialog {
+  width : 692px;
+}
+
 
 .message-content {
   width  : 90%;
@@ -86,6 +100,7 @@ h1 {
 }
 
 .mainContainer {
+  margin-top  : 80px;
   margin-left : 30px;
 }
 
@@ -157,6 +172,10 @@ header {
 
 input[name='roomNameInput'] {
   width : 100%;
+}
+
+.my-modal-footer {
+  margin-top: 10px;
 }
 
 #addRoomTickBut {
